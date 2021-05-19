@@ -158,3 +158,22 @@ $(".input").on("input", function(){
     error.hide();
   }
 });
+
+// If user has a cookie indicating that he submitted the form previously, we hide the "Add a review" button!
+$( document ).ready(function() {
+  if (document.cookie.indexOf("{{wf {&quot;path&quot;:&quot;name&quot;,&quot;type&quot;:&quot;PlainText&quot;\} }}=true") >= 0) {
+    $('.add-review').hide();
+  }
+});
+
+// Close modal with success screen button
+$('.button.close-modal').on('click', function(){
+   $('.modal-add-review').hide();
+   });
+
+// Store a value if the user has submitted the form.
+$(".submit-review").submit(function (e) {
+		e.preventDefault();
+    document.cookie = "{{wf {&quot;path&quot;:&quot;name&quot;,&quot;type&quot;:&quot;PlainText&quot;\} }}=true";
+    $('.add-review').hide();
+});
