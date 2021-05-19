@@ -51,6 +51,12 @@ $('.radio-button-label').disableSelection();
    }
   });
 
+// Close modal if click on the "Back to spot details" button
+$('.button.close-modal').on('click', function(){
+   $('.modal-add-review').hide();
+   console.log("Modal hidden by button")
+   });
+
 // Change appearance of custom checkbox or radio button tile on click    
   $( '.w-radio-input' ).click(function() {
     $(this).parent().nextAll().css( "background-color", "#f5f5f6" );
