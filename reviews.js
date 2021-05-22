@@ -165,9 +165,10 @@ $(".input").on("input", function(){
   }
 });
 
-// If user has a cookie indicating that he submitted the form previously, we hide the "Add a review" button!
+// If user has a cookie indicating that they submitted the form previously, we hide the "Add a review" button!
 $( document ).ready(function() {
   if (document.cookie.indexOf("{{wf {&quot;path&quot;:&quot;name&quot;,&quot;type&quot;:&quot;PlainText&quot;\} }}=true") >= 0) {
+    console.log("A review has already been added previously by this user");
     $('.add-review').hide();
   }
 });
