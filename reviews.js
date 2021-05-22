@@ -6,6 +6,12 @@ $( ".rating.value" ).each(function( index ) {
   ratingsCount = ratingsCount + 1;
 });
 
+// Hide the score wrapper if there is no review
+if ( ratingsCount == 0 ) {
+  $('.review-overall-score-wrapper').hide();
+}
+
+
 // Calculate average rating
 var sumRatings = 0;
 for( var i = 0; i < arrayRatings.length; i++ ){
