@@ -20,6 +20,7 @@ for( var i = 0; i < arrayRatings.length; i++ ){
 
 // Insert average rating into table header
 var avgRatings = sumRatings/arrayRatings.length;
+avgRatings = Math.round(avgRatings * 10) / 10;
 $('.overall-rating').text(avgRatings.toString());
 
 // Insert number of ratings into ratings count
